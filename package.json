@@ -1,0 +1,24 @@
+{
+  "name": "pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "pkg -t latest-linux-x64 -o ./app.dev ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huu4707/PKG.git"
+  },
+  "author": "Huu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huu4707/PKG/issues"
+  },
+  "homepage": "https://github.com/huu4707/PKG#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
