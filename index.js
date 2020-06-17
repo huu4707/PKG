@@ -13,6 +13,8 @@ const sequelize = new Sequelize("test", "root", "", {
     idle: 10000,
   },
 });
+var multer = require("multer");
+var upload = multer({ dest: "uploads" });
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,6 +26,11 @@ app.get("/", async function (req, res) {
     type: Sequelize.QueryTypes.SELECT,
   });
   res.send({ users });
+});
+
+app.post("/", upload.single("file"), async function (req, res) {
+  console.log("req", req.file);
+  res.send(req.file);
 });
 
 app.post("/user", function (req, res) {
